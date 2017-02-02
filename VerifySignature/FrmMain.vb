@@ -1,12 +1,11 @@
 ﻿Imports System.Security.Cryptography.X509Certificates
 Public Class FrmMain
     Sub New()
-
         InitializeComponent()
-
     End Sub
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LV.FullRowSelect = True
+        LV.MultiSelect = False
         LV.View = View.Details
         LV.Columns.Add("File", 250)
         LV.Columns.Add("Signed", 100)
@@ -14,7 +13,6 @@ Public Class FrmMain
         LV.Columns.Add("Valid From", 0)
         LV.Columns.Add("Valid To", 0)
         LV.Columns.Add("Issued By", 0)
-        LV.MultiSelect = False
     End Sub
     Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
         OFD.Filter = "All files|*.*"
